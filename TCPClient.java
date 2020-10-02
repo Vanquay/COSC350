@@ -50,6 +50,7 @@ public class TCPClient
                 BufferedReader fromWeb=new BufferedReader(new InputStreamReader(con.getInputStream()));
                 String webText;
                 byte[] bytes=fromWeb.readLine().getBytes();
+                //Wrap String in bytes
                 byteNum=ByteBuffer.wrap(bytes).getInt();
                 System.out.println(byteNum);
                 while((webText=fromWeb.readLine())!=null)
